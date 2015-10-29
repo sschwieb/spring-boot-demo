@@ -1,0 +1,21 @@
+<html layout:decorator="layout">
+<body>
+	<div layout:fragment="content">
+		<div class="row">
+			<div th:if="${!page.getContent().isEmpty()}">
+				<h3>Choose your kitten:</h3>
+			</div>
+			<div th:each="cat : ${page.getContent()}" class="thumbnail col-xs-6 col-md-3">
+				<div class="img-container">
+					<img th:src="${cat.getImageUrl()}" width="280" height="280"/>
+				</div>
+				<p th:text="'Only ' + ${cat.getPrice()} + ' AUD!'"></p>
+				<button>Buy now</button>
+			</div>
+			<div th:if="${page.getContent().isEmpty()}">
+				<p>Sorry, but we're temporarily out of cats.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

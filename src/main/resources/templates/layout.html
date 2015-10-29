@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title th:text="${pageTitle}"></title>
+    <link rel='stylesheet' href='/webjars/bootstrap/3.3.5/css/bootstrap.min.css'></link>
+	<link rel='stylesheet' href="/all.css"></link>
+	<script src="/all.js"></script>
+  </head>
+  <body>
+    <div th:replace="fragments/header :: header">
+    </div>
+    <div class="container">
+      <div layout:fragment="content">
+        <h1>This will be replaced during runtime.</h1>
+      </div>
+    </div>
+    <footer th:replace="fragments/footer :: footer">&copy; 2014 The Static Templates</footer>
+  </body>
+</html>
